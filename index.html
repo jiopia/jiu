@@ -37,16 +37,18 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
 
     header {
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
+      overflow: hidden;
     }
 
     .header-decoration {
@@ -57,6 +59,7 @@
       border-radius: 50%;
       opacity: 0.5;
       animation: float 8s ease-in-out infinite;
+      pointer-events: none;
     }
 
     .header-decoration:nth-child(1) {
@@ -381,12 +384,26 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+
       h1 {
         font-size: 2.5rem;
         letter-spacing: 0.3rem;
       }
 
       .header-decoration {
+        width: 150px;
+        height: 150px;
+      }
+
+      .header-decoration:nth-child(1) {
+        left: -80px;
+      }
+
+      .header-decoration:nth-child(2) {
+        right: -100px;
         width: 200px;
         height: 200px;
       }
@@ -399,8 +416,84 @@
         font-size: 1.3rem;
       }
 
+      .quote::before,
+      .quote::after {
+        font-size: 2rem;
+      }
+
       .hobbies-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .hobby-card {
+        padding: 2rem 1.5rem;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .favorite-section {
+        padding: 5rem 0;
+      }
+
+      .quote-section {
+        padding: 6rem 0;
+      }
+
+      .favorite-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        padding: 1rem 0;
+      }
+
+      .favorite-item span:last-child {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.8rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 0.15rem;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .about-content p {
+        font-size: 1rem;
+      }
+
+      .hobby-card h3 {
+        font-size: 1.3rem;
+      }
+
+      .quote {
+        font-size: 1.1rem;
+      }
+
+      .quote::before,
+      .quote::after {
+        font-size: 1.5rem;
       }
     }
   </style>
