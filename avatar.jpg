@@ -1,3 +1,0 @@
-<#assign img_data = context.images[0].bytes>
-<#assign img_path = "/workspace/avatar.jpg">
-<#write_file path=img_path content=img_data>
